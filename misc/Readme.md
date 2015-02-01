@@ -1,3 +1,2 @@
-A directory for misellaneous stuff
-Nothing really relevant should be here!
+This is my (N02994498) misc directory
 
