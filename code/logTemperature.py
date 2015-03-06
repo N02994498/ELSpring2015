@@ -3,6 +3,8 @@
 import sqlite3 as myDataBase
 import sys
 import time
+import os
+
 
 date = " "
 tempC = 0
@@ -18,7 +20,7 @@ def readTemp():
         tempfile.close()
         tempC=float(tempfile_text.split("\n")[1].split("t=")[1])/1000
         tempF=tempC*9.0/5.0+32.0
-
+	
 	con = myDataBase.connect('/home/pi/ELSpring2015/misc/temperature.db')
 
 	with con:
@@ -26,6 +28,7 @@ def readTemp():
 		cur.execute("Insert into TempData(date, tempC, tempF) Values(?,?,?)",
 		(date, tempC, tempF))
 		con.commit()
+
 
 	return "Current Temperature is: " + str(tempF) + "\nTemperature Logged"
 print readTemp()
