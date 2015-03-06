@@ -19,7 +19,7 @@ def readTemp():
         tempC=float(tempfile_text.split("\n")[1].split("t=")[1])/1000
         tempF=tempC*9.0/5.0+32.0
 
-	con = myDataBase.connect('/home/pi/databases/temperature.db')
+	con = myDataBase.connect('/home/pi/ELSpring2015/misc/temperature.db')
 
 	with con:
 		cur = con.cursor() 
